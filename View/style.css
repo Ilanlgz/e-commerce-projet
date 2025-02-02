@@ -1,0 +1,196 @@
+
+#navbar {
+    background-color: #332e3a;
+    margin-bottom: 50px;
+}
+
+#navbar .navbar-brand {
+    color: #ffffff; 
+    margin-right: 10px;
+   
+}
+
+#navbar .navbar-brand:hover {
+    color: #007bff;
+ 
+}
+
+#navbar .navbar-nav .nav-item .nav-link {
+    color: #ff0000;
+    margin-left: 80px;
+      
+}
+
+#navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #3700ff;
+}
+
+#navbar .form-control {
+    margin-right: 10px; 
+}
+
+#navbar .dropdown-menu {
+    background-color: #26292c;
+}
+.dropdown-item{
+    display: flex;
+    color: #e70000;
+
+}
+
+#navbar .dropdown-item {
+    color: #e70000;
+    justify-content: space-between;
+    margin-right: 50px;
+
+}
+
+#navbar .dropdown-item:hover {
+    color: #2002ff;
+    background-color: transparent;
+}
+
+
+
+
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+.img-container {
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.home1{
+    background-image: url('../images/home.jpg');
+    background-attachment: fixed;
+    background-position: center top;
+    margin: 0;
+    margin-right: -100px;
+    margin-left: -100px ;
+    margin-top: -50px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#home {
+    background-image: url('../images/home.jpg');
+    background-attachment: fixed;
+    padding: 450px 300px;
+    margin-left: -100px;
+    margin-right: -100px;
+    margin-top: -50px;
+    
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#home h1{
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 8px 4px 7px #000000;
+}
+#home h1:hover {
+    color: #ff0000;
+    transform: translateX(-50%) scale(1.02);
+}
+#home p{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 10px 8px 11px #000000;
+}
+
+#home p:hover {
+    color: #ff0000;
+    transform: translateX(-50%) scale(1.02);
+    
+}
+
+
+.content {
+    padding: 20px;
+    position: relative; 
+    margin-left: -120px;
+    margin-right: -103px;
+    margin-top: -80px;
+    color: #e70000;
+    top: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #000000;
+    z-index: 1;
+}
+
+
+
+.navbar {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+.navbar-nav {
+    margin-left: 0; 
+}
+
+.nav-item {
+    margin-left: 0; 
+}
+
+.nav-link {
+    padding: 0.5rem 1rem; 
+}
+
+
+.dropdown-menu {
+    margin: 0; 
+    padding: 0;
+}

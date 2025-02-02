@@ -1,0 +1,11 @@
+{
+    "name": "vendor/autoload.php",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\AutoloadPhp\\": "src/"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.24"
+    }
+}
