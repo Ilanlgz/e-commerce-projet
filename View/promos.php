@@ -19,7 +19,7 @@ $promos = getPromotionalProducts($pdo);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXhW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
- <div class="home1">
+<div class="home1">
     <div class="container mt-5">
         <div class="row">
             <?php foreach ($promos as $promo): ?>
@@ -37,6 +37,8 @@ $promos = getPromotionalProducts($pdo);
                             <form action="index.php?action=addToCart" method="post" data-ajax="true">
                                 <input type="hidden" name="product_id" value="<?php echo $promo['id']; ?>">
                                 <input type="hidden" name="category" value="promos">
+                                <input type="hidden" name="original_price" value="<?php echo $promo['original_price']; ?>">
+                                <input type="hidden" name="discounted_price" value="<?php echo $promo['discounted_price']; ?>">
                                 <button type="submit" class="btn btn-primary">Ajouter au panier</button>
                             </form>
                         </div>
