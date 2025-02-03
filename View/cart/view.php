@@ -35,11 +35,12 @@
                             <?php endif; ?>
                         </td>
                         <td>
-                            <form action="index.php?action=updateCart" method="post" class="d-flex align-items-center">
-                                <input type="hidden" name="product_id" value="<?php echo explode('_', $cart_key)[1]; ?>">
-                                <input type="number" name="quantity" value="<?php echo $product['quantity']; ?>" min="1" class="form-control me-2" style="width: 70px;">
-                                <button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
-                            </form>
+                        <form action="index.php?action=updateCart" method="post" class="d-flex align-items-center">
+        <input type="hidden" name="product_id" value="<?php echo explode('_', $cart_key)[1]; ?>">
+        <input type="hidden" name="category" value="<?php echo explode('_', $cart_key)[0]; ?>">
+        <input type="number" name="quantity" value="<?php echo $product['quantity']; ?>" min="1" class="form-control me-2" style="width: 70px;">
+        <button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
+    </form>
                         </td>
                         <td>
                             <?php 
@@ -50,10 +51,11 @@
                             ?> €
                         </td>
                         <td>
-                            <form action="index.php?action=removeFromCart" method="post">
-                                <input type="hidden" name="product_id" value="<?php echo explode('_', $cart_key)[1]; ?>">
-                                <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
-                            </form>
+                        <form action="index.php?action=removeFromCart" method="post">
+        <input type="hidden" name="product_id" value="<?php echo explode('_', $cart_key)[1]; ?>">
+        <input type="hidden" name="category" value="<?php echo explode('_', $cart_key)[0]; ?>">
+        <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+    </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

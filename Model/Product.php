@@ -2,6 +2,36 @@
 
 require_once __DIR__ . '/../config.php';
 
+
+function getProductPrice($pdo, $product_id, $original_price) {
+    $stmt = $pdo->prepare('SELECT discounted_price FROM promos 
+                          WHERE product_id = ? 
+                          AND start_date <= CURRENT_DATE 
+                          AND end_date >= CURRENT_DATE');
+    $stmt->execute([$product_id]);
+    $promo = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $promo ? $promo['discounted_price'] : $original_price;
+}
+
+
+
+function addToCart($pdo, $product_id, $category, $quantity = 1) {
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
+    $stmt->execute([$product_id]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($product) {
+        $cart_key = $category . '_' . $product_id;
+        $_SESSION['cart'][$cart_key] = [
+            'id' => $product_id,
+            'name' => $product['name'],
+            'price' => $product['price'],
+            'quantity' => $quantity
+        ];
+    }
+}
+
 function getAllProducts($pdo) {
     $query = 'SELECT * FROM products';
     $stmt = $pdo->query($query);

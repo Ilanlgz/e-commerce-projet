@@ -211,33 +211,35 @@ switch ($action) {
         }
         header('Location: index.php?action=panier');
         break;
-    case 'updateCart':
-        if (isset($_POST['product_id']) && isset($_POST['quantity']) && isset($_POST['category'])) {
-            $product_id = $_POST['product_id'];
-            $quantity = intval($_POST['quantity']);
-            $category = $_POST['category'];
-            $cart_key = $category . '_' . $product_id;
-            if (isset($_SESSION['cart'][$cart_key])) {
+        case 'updateCart':
+            if (isset($_POST['product_id']) && isset($_POST['quantity']) && isset($_POST['category'])) {
+                $product_id = $_POST['product_id'];
+                $quantity = (int)$_POST['quantity'];
+                $category = $_POST['category'];
+                $cart_key = $category . '_' . $product_id;
+                
                 if ($quantity > 0) {
                     $_SESSION['cart'][$cart_key]['quantity'] = $quantity;
                 } else {
                     unset($_SESSION['cart'][$cart_key]);
                 }
             }
-        }
-        include 'View/cart/view.php';
-        break;
-    case 'removeFromCart':
-        if (isset($_POST['product_id']) && isset($_POST['category'])) {
-            $product_id = $_POST['product_id'];
-            $category = $_POST['category'];
-            $cart_key = $category . '_' . $product_id;
-            if (isset($_SESSION['cart'][$cart_key])) {
+            header('Location: index.php?action=viewCart');
+            exit();
+            break;
+        case 'viewCart':
+            include 'View/cart/view.php';
+            break;
+        case 'removeFromCart':
+            if (isset($_POST['product_id']) && isset($_POST['category'])) {
+                $product_id = $_POST['product_id'];
+                $category = $_POST['category'];
+                $cart_key = $category . '_' . $product_id;
                 unset($_SESSION['cart'][$cart_key]);
             }
-        }
-        include 'View/cart/view.php';
-        break;
+            header('Location: index.php?action=viewCart');
+            exit();
+            break;
     case 'checkout':
         $_SESSION['cart'] = [];
         echo "<p class='text-center'>Merci pour votre commande !</p>";
