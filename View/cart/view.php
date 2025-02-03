@@ -15,7 +15,6 @@
                 <?php 
                 $total = 0;
                 foreach ($_SESSION['cart'] as $cart_key => $product): 
-                    // Check if product has promo
                     $stmt = $pdo->prepare('SELECT discounted_price FROM promos WHERE product_id = ? AND start_date <= CURRENT_DATE AND end_date >= CURRENT_DATE');
                     $stmt->execute([explode('_', $cart_key)[1]]);
                     $promo = $stmt->fetch(PDO::FETCH_ASSOC);

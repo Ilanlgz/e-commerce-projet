@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root'); // Utilisateur par défaut de XAMPP
-define('DB_PASS', ''); // Mot de passe par défaut de XAMPP est vide
+define('DB_USER', 'root');
+define('DB_PASS', '');
 define('DB_NAME', 'e-commerce');
 
 try {

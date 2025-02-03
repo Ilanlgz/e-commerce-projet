@@ -8,8 +8,6 @@ require_once __DIR__ . '/Controller/UserController.php';
 require_once __DIR__ . '/Controller/ProductController.php';
 
 
-
-// Déterminer l'action à effectuer
 $action = isset($_GET['action']) ? $_GET['action'] : 'accueil';
 
 ob_start();

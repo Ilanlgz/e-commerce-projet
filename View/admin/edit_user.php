@@ -8,7 +8,6 @@ require_once __DIR__ . '/../../Controller/auth.php';
 
 
 
-// Récupérer les informations de l'utilisateur
 $user_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 $stmt->execute([$user_id]);

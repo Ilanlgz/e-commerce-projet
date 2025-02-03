@@ -11,7 +11,6 @@
     <?php include 'View/_partials/navbar.php'; ?>
     <div id="content" class="container mt-5">
         <?php
-        // Inclure le contenu de la page en fonction de l'action
         if (isset($content)) {
             echo $content;
         } else{

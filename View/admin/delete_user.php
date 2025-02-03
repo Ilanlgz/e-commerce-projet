@@ -13,19 +13,16 @@ if (!is_admin()) {
 
 $id = $_GET['id'];
 
-// Supprimer les enregistrements associés dans la table `order_items`
+
 $stmt = $pdo->prepare('DELETE oi FROM order_items oi JOIN orders o ON oi.order_id = o.id WHERE o.user_id = ?');
 $stmt->execute([$id]);
 
-// Supprimer les enregistrements associés dans la table `orders`
 $stmt = $pdo->prepare('DELETE FROM orders WHERE user_id = ?');
 $stmt->execute([$id]);
 
-// Supprimer les enregistrements associés dans la table `cart`
 $stmt = $pdo->prepare('DELETE FROM cart WHERE user_id = ?');
 $stmt->execute([$id]);
 
-// Supprimer l'utilisateur
 $stmt = $pdo->prepare('DELETE FROM users WHERE id = ?');
 $stmt->execute([$id]);
 

@@ -6,7 +6,6 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../../Controller/auth.php';
 
-// Vérifier si l'utilisateur est admin
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
     header('Location: index.php?action=admin_login');
     exit();

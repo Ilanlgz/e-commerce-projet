@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $email = $_POST['email'];
 
-    // Vérifier si le nom d'utilisateur ou l'email existe déjà
+
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM users WHERE username = ? OR email = ?');
     $stmt->execute([$username, $email]);
     $count = $stmt->fetchColumn();
